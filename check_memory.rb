@@ -57,7 +57,7 @@ if using_performance_data
   uom="%"
  performance_data= "#{perf_label}=#{value}#{uom};#{warning};#{critical};#{min};#{max}"
 end
-output_text = "#{status} Installed Memory: #{total_memory }MB Free memory = #{total_free_memory}MB #{percent.to_i}% free"
+output_text = "#{status} #{percent.to_i}% free Installed Memory: #{total_memory }MB Free memory = #{total_free_memory}MB "
 
 puts output_text + " | "+performance_data
 exit exit_code
