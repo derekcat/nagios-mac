@@ -53,8 +53,8 @@ end
 if using_performance_data
  
   #setup the performance data
-  value = total_free_memory
-  uom="MB"
+  value = percent.to_i
+  uom="%"
  performance_data= "#{perf_label}=#{value}#{uom};#{warning};#{critical};#{min};#{max}"
 end
 output_text = "#{status} Installed Memory: #{total_memory }MB Free memory = #{total_free_memory}MB #{percent.to_i}% free"
