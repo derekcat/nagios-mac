@@ -3,7 +3,6 @@
 #the script should be used as follows: check_memory.rb <lowest percent for warning> <lowest percent for critical>
 #Example check_memory.rb 25 15
 # this would warn you when 25% of the memory is not free and would be critical when 25% of it is not free
-#the file should be excuted using the following: basic_check.rb <warning> <critical> <min> <max>
 #min and max are not required
 #some scripts may not having a warning and may have other stuff
 MEGABYTE = 1024.0 * 1024.0
@@ -21,8 +20,8 @@ value = 0
 uom = ""
 warning = ARGV[0]
 critical = ARGV[1]
-min = ARGV[2]
-max = ARGV[3]
+min = 0
+max = 100
 
 #top -l 1| awk '/CPU usage/ {print $3, $5}'
 user_cpu = `top -l 1| awk '/CPU usage/ {print $3}'`
