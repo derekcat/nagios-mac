@@ -17,7 +17,7 @@ using_performance_data = true
 performance_data = ""
 perf_label = "cpuload"
 value = 0
-uom = ""
+uom = "p"
 warning = ARGV[0]
 critical = ARGV[1]
 min = 0
@@ -47,7 +47,7 @@ end
 if using_performance_data
   #setup the performance data
   value = total_cpu.to_i
-  uom="%"
+
  performance_data= "#{perf_label}=#{value}#{uom};#{warning};#{critical};#{min};#{max}"
 end
 output_text = "#{status} CPU: #{total_cpu}% User:#{user_cpu}% Sytem: #{system_cpu}%"

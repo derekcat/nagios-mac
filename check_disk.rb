@@ -13,7 +13,7 @@ using_performance_data = true
 performance_data = ""
 perf_label = "diskspace"
 value = 0
-uom = ""
+uom = "p"
 warning = ARGV[0]
 critical = ARGV[1]
 disk = ARGV[2]
@@ -40,7 +40,6 @@ end
 if using_performance_data
   #setup the performance data
   value = percent.to_i
-  uom="%"
  performance_data= "#{perf_label}=#{value}#{uom};#{warning};#{critical};"
 end
 free_gb =  `df -hl | grep '#{disk}' | awk '{print $4}'`.chomp.chop.chop
