@@ -52,7 +52,7 @@ if using_performance_data
 end
 output_text = "#{status} CPU: #{total_cpu}% User:#{user_cpu}% Sytem: #{system_cpu}%"
 
-puts output_text + " | "+performance_data
+puts output_text + "|"+performance_data
 exit exit_code
 
 
