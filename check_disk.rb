@@ -42,9 +42,9 @@ if using_performance_data
   value = percent.to_i
  performance_data= "#{perf_label}=#{value}#{uom};#{warning};#{critical};"
 end
-free_gb =  `df -hl | grep '#{disk}' | awk '{print $4}'`.chomp.chop.chop
-total_gb = `df -hl | grep '#{disk}' | awk '{print $2}'`.chomp.chop.chop
-output_text = "#{status} Free: #{percent.to_i}% #{free_gb}GB/#{total_gb}GB"
+free_space =  `df -hl | grep '#{disk}' | awk '{print $4}'`.chomp.chop
+total_space = `df -hl | grep '#{disk}' | awk '{print $2}'`.chomp.chop
+output_text = "#{status} Free: #{percent.to_i}% #{free_space}/#{total_space}"
 
 puts output_text + " | "+performance_data
 exit exit_code
